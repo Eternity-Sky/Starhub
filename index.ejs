@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub OAuth Demo</title>
+</head>
+<body>
+    <h1>欢迎来到 GitHub OAuth 示例</h1>
+    <% if (user) { %>
+        <p>你好, <%= user.username %>!</p>
+        <form action="/star" method="POST">
+            <button type="submit">Star</button>
+        </form>
+        <form action="/fork" method="POST">
+            <button type="submit">Fork</button>
+        </form>
+    <% } else { %>
+        <a href="/auth/github">使用 GitHub 登录</a>
+    <% } %>
+</body>
+</html> 
